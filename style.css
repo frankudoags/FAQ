@@ -1,0 +1,143 @@
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Kumbh+Sans:wght@300;400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+    :root {
+    --desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+    --vdark-gray-blue: hsl(237, 12%, 33%);
+    --dark-gray-blue: hsl(240, 6%, 50%);
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+    --divider-blue: hsl(240, 5%, 91%);
+    }
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Kumbh Sans", sans-serif;
+    }
+    p {
+      font-size: 16px;
+      padding: 0.5rem;
+    }
+    .container{
+      background-image:linear-gradient(var(--soft-violet),var(--soft-blue));
+      display: flex;
+      align-items:center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .card {
+      background-color: white;
+      max-width: 1000px;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem;
+      border-radius: 2rem;
+      overflow: hidden;
+    }
+    .woman {
+      margin-right: 2rem;
+      height:100%;
+     
+    }
+    .woman-desktop {
+      background-image: url(../images/bg-pattern-desktop.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-left: -6rem;
+    }
+    .woman-box {
+      position: absolute;
+      display: block;
+      margin-top: 8rem;
+      margin-left: -7.8rem;
+    }
+    .woman-mobile {
+      display: none;
+    }
+    ul {
+      list-style: none;
+    }
+    .faq-wrap {
+      /* border: 5px solid red; */
+      width: 363px;
+      /* height: 376px; */
+    }
+    .faq {
+      width: 100%;
+    }
+    .faq-title {
+      text-align: center;
+      margin: 1rem 0;
+    }
+    .question {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 1rem;
+  }
+  .question p {
+    padding: 1rem;
+  }
+.faq.active .question {
+    font-weight: 900;
+}
+
+.question:hover {
+    color: var(--soft-red);
+}
+
+.answer {
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    color: var(--vdark-gray-blue);
+    max-height: 0;
+}
+
+.faq.active .answer {
+  max-height: 300px;
+}
+.faq.active img{
+    transform: rotate(180deg);
+      transition: transform 0.5s ease-in-out;
+}
+
+
+.arrow {
+    /* FLOAT NEEDS TO STAY, OTHERWISE ANIMATION DOESNT WORK :/ FUCK KNOWS WHY LOL */
+    float: right;
+    transition: 0.4s;
+}
+
+
+
+@media (max-width: 888px) {
+    .card {
+        width: 80%;
+        flex-direction: column;
+    }
+    .faq-wrap {
+        width: 100%;
+    }
+    .woman-box {
+        display: none;
+    }
+    .woman-desktop {
+        display: none;
+    }
+    /* .woman-mobile {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 30%;
+    } */
+    body {
+        font-size: 12px;
+    }
+}
